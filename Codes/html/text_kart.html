@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kart Battle Browser Game</title>
+  <style>
+    body { background: #eee; }
+    canvas { background: #fff; display: block; margin: 40px auto; border: 2px solid #333; }
+    #info { text-align: center; font-family: sans-serif; }
+  </style>
+</head>
+<body>
+  <div id="info">
+    <h2>Kart Battle (Browser Version)</h2>
+    <p>
+      <b>Player 1 (Red):</b> WASD to move, F to shoot<br>
+      <b>Player 2 (Blue):</b> Arrow keys to move, '/' to shoot
+    </p>
+  </div>
+  <canvas id="game" width="800" height="500"></canvas>
+  <script>
+    // Settings
+    const canvas = document.getElementById('game');
+    const ctx = canvas.getContext('2d');
+    const WIDTH = canvas.width, HEIGHT = canvas.height;
+    const PLAYER_SIZE = 40, BULLET_SIZE = 10, BULLET_SPEED = 8, MAX_HEALTH = 3;
+
+    // Player objects
+    const players = [
+      { x: 100, y: 200, color: 'red', health: MAX_HEALTH, up: 'KeyW', down: 'KeyS', left: 'KeyA', right: 'KeyD', shoot: 'KeyF', dx: 0, dy: 0, bullets: [] },
+      { x: 650, y: 200, color: 'blue', health: MAX_HEALTH, up: 'ArrowUp', down: 'ArrowDown', left: 'ArrowLeft', right: 'ArrowRight', shoot: 'Slash', dx: 0, dy: 0, bullets: [] }
+    ];
+
+    let keys = {};
+    let winner = '';
+
+    document.addEventListener('keydown', e => keys[e.code] = true);
+    document.addEventListener('keyup', e => keys[e.code] = false);
+
+    function shoot(playerIdx) {
+      const p = players[playerIdx];
+      // Shoot right for Player 1, left for Player 2
+      const dir = playerIdx === 0 ? 1 : -1;
+      p.bullets.push({
+        x: p.x + PLAYER_SIZE/2 + dir*PLAYER_SIZE/2,
+        y: p.y + PLAYER_SIZE/2 - BULLET_SIZE/2,
+        dx: BULLET_SPEED * dir
+      });
+    }
+
+    function update() {
+      if (winner) return;
+
+      // Movement and shooting
+      players.forEach((p, idx) => {
+        if (keys[p.up]) p.y -= 5;
+        if (keys[p.down]) p.y += 5;
+        if (keys[p.left]) p.x -= 5;
+        if (keys[p.right]) p.x += 5;
+        // Keep in bounds
+        p.x = Math.max(0, Math.min(WIDTH - PLAYER_SIZE, p.x));
+        p.y = Math.max(0, Math.min(HEIGHT - PLAYER_SIZE, p.y));
+        // Shooting
+        if (keys[p.shoot] && !p.shootPressed) {
+          shoot(idx);
+          p.shootPressed = true;
+        }
+        if (!keys[p.shoot]) p.shootPressed = false;
+      });
+
+      // Bullets
+      players.forEach((p, idx) => {
+        p.bullets.forEach((b, bi) => {
+          b.x += b.dx;
+          // Remove if out of bounds
+          if (b.x < 0 || b.x > WIDTH) p.bullets.splice(bi, 1);
+          // Check collision with other player
+          const other = players[1-idx];
+          if (
+            b.x < other.x + PLAYER_SIZE &&
+            b.x + BULLET_SIZE > other.x &&
+            b.y < other.y + PLAYER_SIZE &&
+            b.y + BULLET_SIZE > other.y
+          ) {
+            other.health -= 1;
+            p.bullets.splice(bi, 1);
+            if (other.health <= 0) winner = `Player ${idx+1}`;
+          }
+        });
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+      // Draw players
+      players.forEach((p, idx) => {
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x, p.y, PLAYER_SIZE, PLAYER_SIZE);
+        ctx.fillStyle = '#222';
+        ctx.font = '20px sans-serif';
+        ctx.fillText(`P${idx+1}: ${p.health}`, idx === 0 ? 20 : WIDTH-100, 30);
+        // Draw bullets
+        p.bullets.forEach(b => {
+          ctx.fillStyle = p.color;
+          ctx.fillRect(b.x, b.y, BULLET_SIZE, BULLET_SIZE);
+        });
+      });
+
+      // Winner
+      if (winner) {
+        ctx.fillStyle = '#222';
+        ctx.font = '40px sans-serif';
+        ctx.fillText(`${winner} Wins!`, WIDTH/2 - 100, HEIGHT/2);
+      }
+    }
+
+    function gameLoop() {
+      update();
+      draw();
+      requestAnimationFrame(gameLoop);
+    }
+
+    gameLoop();
+  </script>
+</body>
+</html>

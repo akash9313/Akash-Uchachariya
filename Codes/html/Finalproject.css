@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #2a2828;
+    color: #fff;
+  }
+  
+  header {
+    height: 10%;
+    width: 100%;
+    background-color: #1b1c2c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  #heading {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-right: 1200px;
+  }
+  
+  .login a button {
+    width: 85px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 35px;
+    background-color: rgb(8, 52, 118);
+    color: #f7f7f9;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .login a button:hover {
+    background-color: rgb(235, 235, 246);
+    color: #01233c;
+  }
+  
+  .display {
+    display: flex;
+    height: 90vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background: #252526;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .codes li {
+    padding: 10px;
+    cursor: pointer;
+    background: #333;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  .codes li:hover {
+    background: #444;
+  }
+  
+  .editor-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .editor-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  #snippetTitle {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .editor-area {
+    height: 400px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  button, select {
+    padding: 10px;
+    background: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #005a9e;
+  }
+  
+  .output {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    overflow: auto;
+  }
+  

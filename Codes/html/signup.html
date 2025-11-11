@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #1b1c2c, #3b3c5c);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background-color: #f4f4f9;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(15, 14, 14, 0.4);
+      width: 300px;
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    h2 { text-align: center; color: #fff; margin-bottom: 20px; }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background-color: #120f0f;
+      color: white;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #005a9e; }
+    p { color: white; text-align: center; margin-top: 15px; }
+    a { color: #00bfff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Register</h1>
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Re-enter Password" required />
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+
+      alert("Registration successful!");
+      window.location.href = "Finallogin.html";
+    });
+  </script>
+</body>
+</html>

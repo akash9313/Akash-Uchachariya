@@ -1,0 +1,85 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000021028b9be20 .scope module, "test_half_adder" "test_half_adder" 2 10;
+ .timescale 0 0;
+v0000021028ab1ba0_0 .var "a", 0 0;
+v0000021028ab1f60_0 .var "b", 0 0;
+v0000021028ab1c40_0 .net "cout", 0 0, L_0000021028a64290;  1 drivers
+v0000021028ab2460_0 .net "sum", 0 0, L_0000021028a63ff0;  1 drivers
+S_0000021028b9ba80 .scope module, "uut" "half_adder_using_nand" 2 14, 2 1 0, S_0000021028b9be20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "sum";
+    .port_info 3 /OUTPUT 1 "cout";
+L_0000021028a54f00 .functor AND 1, v0000021028ab1ba0_0, v0000021028ab1f60_0, C4<1>, C4<1>;
+L_0000021028b9a5f0 .functor NOT 1, L_0000021028a54f00, C4<0>, C4<0>, C4<0>;
+L_0000021028b99200 .functor AND 1, v0000021028ab1ba0_0, L_0000021028b9a5f0, C4<1>, C4<1>;
+L_0000021028a66ec0 .functor NOT 1, L_0000021028b99200, C4<0>, C4<0>, C4<0>;
+L_0000021028b966e0 .functor AND 1, v0000021028ab1f60_0, L_0000021028a66ec0, C4<1>, C4<1>;
+L_0000021028a64450 .functor NOT 1, L_0000021028b966e0, C4<0>, C4<0>, C4<0>;
+L_0000021028a645a0 .functor AND 1, L_0000021028a66ec0, L_0000021028a64450, C4<1>, C4<1>;
+L_0000021028a63ff0 .functor NOT 1, L_0000021028a645a0, C4<0>, C4<0>, C4<0>;
+L_0000021028a641b0 .functor AND 1, L_0000021028b9a5f0, L_0000021028b9a5f0, C4<1>, C4<1>;
+L_0000021028a64290 .functor NOT 1, L_0000021028a641b0, C4<0>, C4<0>, C4<0>;
+v0000021028b96900_0 .net *"_ivl_0", 0 0, L_0000021028a54f00;  1 drivers
+v0000021028b99160_0 .net *"_ivl_12", 0 0, L_0000021028a645a0;  1 drivers
+v0000021028b9a550_0 .net *"_ivl_16", 0 0, L_0000021028a641b0;  1 drivers
+v0000021028a54d20_0 .net *"_ivl_4", 0 0, L_0000021028b99200;  1 drivers
+v0000021028a54dc0_0 .net *"_ivl_8", 0 0, L_0000021028b966e0;  1 drivers
+v0000021028a54e60_0 .net "a", 0 0, v0000021028ab1ba0_0;  1 drivers
+v0000021028ab1d80_0 .net "b", 0 0, v0000021028ab1f60_0;  1 drivers
+v0000021028ab2140_0 .net "cout", 0 0, L_0000021028a64290;  alias, 1 drivers
+v0000021028ab1e20_0 .net "sum", 0 0, L_0000021028a63ff0;  alias, 1 drivers
+v0000021028ab23c0_0 .net "w1", 0 0, L_0000021028b9a5f0;  1 drivers
+v0000021028ab1ec0_0 .net "w2", 0 0, L_0000021028a66ec0;  1 drivers
+v0000021028ab2320_0 .net "w3", 0 0, L_0000021028a64450;  1 drivers
+    .scope S_0000021028b9be20;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "half_adder.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000021028b9be20 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000021028b9be20;
+T_1 ;
+    %vpi_call 2 22 "$display", "A  B  |  sum  cout" {0 0 0};
+    %vpi_call 2 23 "$display", "--------------------" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021028ab1ba0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021028ab1f60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 25 "$display", "%b %b |  %b    %b", v0000021028ab1ba0_0, v0000021028ab1f60_0, v0000021028ab2460_0, v0000021028ab1c40_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021028ab1ba0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021028ab1f60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 26 "$display", "%b %b |  %b    %b", v0000021028ab1ba0_0, v0000021028ab1f60_0, v0000021028ab2460_0, v0000021028ab1c40_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021028ab1ba0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021028ab1f60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 27 "$display", "%b %b |  %b    %b", v0000021028ab1ba0_0, v0000021028ab1f60_0, v0000021028ab2460_0, v0000021028ab1c40_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021028ab1ba0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021028ab1f60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 28 "$display", "%b %b |  %b    %b", v0000021028ab1ba0_0, v0000021028ab1f60_0, v0000021028ab2460_0, v0000021028ab1c40_0 {0 0 0};
+    %vpi_call 2 29 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "halfadder_using_nand.v";

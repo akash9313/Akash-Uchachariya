@@ -1,0 +1,248 @@
+*{
+    margin : 0%;
+    padding : 0%;
+    box-sizing: border-box;
+}
+ 
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#header{
+    width: 100%;
+    height: 13%;
+    background-color: white;
+    /* position: fixed; */
+}
+
+#logo{
+    margin-top: 25px;
+    margin-right: 40px;
+    margin-left: 35px;
+}
+
+header h3{
+    text-align: center;
+    font-size: 130%;
+    color: rgb(7, 81, 118);
+    margin-top: 45px;
+    margin-right: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 13%;
+    background-color: white;
+    position: fixed;
+}
+
+nav a{
+    padding: 5px;
+    text-align: center;
+    float: left;
+    color: white;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+#global{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    padding: 9px;
+    border-radius: 100px;
+}
+
+#global:hover{
+    background-color: rgb(218, 238, 241);
+}
+
+#contact h3{
+    margin: 40px;
+    margin-left: 200px;
+    font-size:large;
+    color: rgb(31, 139, 174);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: larger;
+}
+
+#login{
+    background-color: white;
+    font-size: 130%;
+    font-weight: bold;
+    color: rgb(7, 81, 118);
+    margin-top: 30px;
+    margin-right: 35px;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 50px;
+    border: 0px;
+}
+
+#login:hover{
+    background-color: rgb(218, 238, 241);
+}
+
+#search{
+    margin-top: 36px;
+    border: 1px solid white;
+    padding: 9px;
+    border-radius: 50%;
+}
+
+#search:hover{
+    background-color: rgb(218, 238, 241);
+}
+
+#tryforfree{
+    background-color: rgb(17, 151, 17);
+    font-size: 145%;
+    font-weight: bold;
+    color: white;
+    margin-top: 30px;
+    margin-right: 35px;
+    padding: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 7%;
+    border: 0px;
+    padding-left: 17%;
+    padding-right: 17%;
+}
+
+#tryforfree:hover{
+    background-color: black;
+}
+
+/* div{
+    height: 40%;
+    width: 60%;
+    background-color: aqua;
+} */
+
+#agent{
+    width: 100%;
+    height: 6%;
+    display: flex;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(21, 2, 129);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 145%;
+}
+
+/* #agent img{
+    background-color: rgb(215, 213, 228);
+} */
+
+#discover{
+    color: white;
+}
+
+#discover a:hover{
+    background-color: rgb(21, 2, 129);
+}
+
+main{
+    display: flex;
+}
+
+.starter{
+    width: 35%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 120px;
+    padding: 35px;
+    /* background-color: aqua; */
+}
+
+#starter{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 80px;
+    color: rgb(11, 53, 107);
+}
+
+#unite{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight:500;
+    color: rgb(59, 59, 59);
+}
+
+#trial{
+    font-size: 145%;
+    font-weight: bold;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 35px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 7%;
+    border: 0px;
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: rgb(25, 133, 209);
+}
+
+#demo{
+    font-size: 145%;
+    font-weight: bold;
+    color: rgb(25, 133, 209);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 35px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 7%;
+    border: 3px solid rgb(25, 133, 209);
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: white;
+}
+
+#learn{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 55px;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    color: rgb(11, 53, 107);
+    margin-top: 60px;
+}
+
+#trial:hover{
+    background-color: rgb(11, 53, 107);
+}
+
+#demo:hover{
+    border-color: rgb(11, 53, 107);
+    color: rgb(11, 53, 107);
+    background-color: rgb(222, 243, 250);
+}
+
+#treeimg{
+    /* margin-right: -1000px;
+    margin-top: -800px;
+    margin-left: 800px;
+    z-index: 0;
+    background-color: rgb(26, 26, 4); */
+    width: 1000px;
+}
+
+#video{
+    /* width: 800px; */
+    margin-left: 500px;
+}

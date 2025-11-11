@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code Snippet Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css"/>
+  <link rel="stylesheet" href="Finalproject.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/htmlmixed/htmlmixed.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class = "logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Hw31udjfbG6LCeehS685Sh81vLJdJ1WNgw&s" width="100px" height="70px" alt="">
+    </div>
+
+    <div id="heading">Code Snippet Manager</div>
+  </header>
+
+  <div class="display">
+    <div class="sidebar">
+      <h2>Saved Codes</h2>
+      <ul class="codes" id="snippetList"></ul>
+      <button onclick="clearCodes()">Clear All Snippets</button>
+    </div>
+
+    <div class="editor-container">
+      <h2 class="editor-title">Code Editor</h2>
+      <input type="text" id="snippetTitle" placeholder="Snippet Title" />
+      <textarea id="codeEditor" class="editor-area"></textarea>
+
+      <div class="buttons">
+        <button onclick="saveSnippet()">Save Snippet</button>
+        <button onclick="runSnippet()">Run Code</button>
+        <select id="languageSelect" onchange="changeLanguage()">
+          <option value="javascript">JavaScript</option>
+          <option value="htmlmixed">HTML/CSS</option>
+        </select>
+      </div>
+
+      <h3>Output:</h3>
+      <iframe id="outputFrame" style="width:100%; height:300px; border:1px solid #ccc; display:none;"></iframe>
+      <pre id="output" class="output">Your output will appear here...</pre>
+    </div>
+  </div>
+
+  <script src="Finalproject.js"></script>
+</body>
+</html>

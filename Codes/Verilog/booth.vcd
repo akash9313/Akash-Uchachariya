@@ -1,23 +1,23 @@
 $date
-	Tue Feb 03 11:47:54 2026
+	Tue Feb 10 12:22:59 2026
 $end
 $version
 	Icarus Verilog
 $end
 $timescale
-	1s
+	1ps
 $end
 $scope module BoothMultiplier_tb $end
-$var wire 1 ! q0 $end
-$var wire 1 " sftQ $end
-$var wire 1 # sftA $end
-$var wire 1 $ qm1 $end
+$var wire 1 ! sftQ $end
+$var wire 1 " sftA $end
+$var wire 1 # qm1 $end
+$var wire 1 $ q0 $end
 $var wire 1 % ldcnt $end
 $var wire 1 & eqz $end
 $var wire 1 ' done $end
 $var wire 1 ( decr $end
-$var wire 1 ) clrq $end
-$var wire 1 * clrff $end
+$var wire 1 ) clrff $end
+$var wire 1 * clrQ $end
 $var wire 1 + clrA $end
 $var wire 1 , addsub $end
 $var wire 1 - LdQ $end
@@ -28,304 +28,529 @@ $var reg 16 1 data_in [15:0] $end
 $var reg 1 2 start $end
 $scope module BM $end
 $var wire 1 0 clk $end
-$var wire 1 3 clrQ $end
-$var wire 16 4 data_in [15:0] $end
-$var wire 1 ! q0 $end
-$var wire 1 " sftQ $end
-$var wire 1 # sftA $end
-$var wire 1 $ qm1 $end
+$var wire 16 3 data_in [15:0] $end
+$var wire 1 ! sftQ $end
+$var wire 1 " sftA $end
+$var wire 1 # qm1 $end
+$var wire 1 $ q0 $end
 $var wire 1 % ldcnt $end
 $var wire 1 & eqz $end
 $var wire 1 ( decr $end
-$var wire 5 5 count [4:0] $end
-$var wire 1 ) clrq $end
-$var wire 1 * clrff $end
+$var wire 1 ) clrff $end
+$var wire 1 * clrQ $end
 $var wire 1 + clrA $end
 $var wire 1 , addsub $end
-$var wire 16 6 Z [15:0] $end
-$var wire 16 7 Q [15:0] $end
-$var wire 16 8 M [15:0] $end
+$var wire 16 4 Z [15:0] $end
+$var wire 16 5 Q [15:0] $end
+$var wire 16 6 M [15:0] $end
 $var wire 1 - LdQ $end
 $var wire 1 . LdM $end
 $var wire 1 / LdA $end
-$var wire 16 9 A [15:0] $end
+$var wire 16 7 A [15:0] $end
+$var reg 5 8 count [4:0] $end
 $scope module AR $end
 $var wire 1 0 clk $end
-$var wire 1 : s_in $end
-$var wire 1 # sft $end
+$var wire 1 9 s_in $end
+$var wire 1 " sft $end
 $var wire 1 / ld $end
-$var wire 16 ; din [15:0] $end
+$var wire 16 : din [15:0] $end
 $var wire 1 + clr $end
-$var reg 16 < dout [15:0] $end
+$var reg 16 ; dout [15:0] $end
 $upscope $end
 $scope module AS $end
-$var wire 16 = in1 [15:0] $end
-$var wire 16 > in2 [15:0] $end
+$var wire 16 < in1 [15:0] $end
+$var wire 16 = in2 [15:0] $end
 $var wire 1 , addsub $end
-$var reg 16 ? out [15:0] $end
-$upscope $end
-$scope module CN $end
-$var wire 1 0 clk $end
-$var wire 1 % ldcnt $end
-$var wire 1 ( decr $end
-$var reg 5 @ count [4:0] $end
+$var reg 16 > out [15:0] $end
 $upscope $end
 $scope module MR $end
 $var wire 1 0 clk $end
-$var wire 16 A din [15:0] $end
+$var wire 16 ? din [15:0] $end
 $var wire 1 . ld $end
-$var reg 16 B dout [15:0] $end
+$var wire 1 + clr $end
+$var reg 16 @ dout [15:0] $end
 $upscope $end
 $scope module QM1 $end
 $var wire 1 0 clk $end
-$var wire 1 C d $end
-$var wire 1 * clr $end
-$var reg 1 $ q $end
+$var wire 1 A d $end
+$var wire 1 ) clr $end
+$var reg 1 # q $end
 $upscope $end
 $scope module QR $end
 $var wire 1 0 clk $end
-$var wire 1 3 clr $end
-$var wire 16 D din [15:0] $end
-$var wire 1 E s_in $end
-$var wire 1 " sft $end
+$var wire 16 B din [15:0] $end
+$var wire 1 C s_in $end
+$var wire 1 ! sft $end
 $var wire 1 - ld $end
-$var reg 16 F dout [15:0] $end
+$var wire 1 * clr $end
+$var reg 16 D dout [15:0] $end
 $upscope $end
 $upscope $end
 $scope module CL $end
-$var wire 1 ! Q0 $end
+$var wire 1 $ Q0 $end
 $var wire 1 0 clk $end
 $var wire 1 & eqz $end
-$var wire 1 $ qm1 $end
+$var wire 1 # qm1 $end
 $var wire 1 2 start $end
 $var reg 1 / LdA $end
 $var reg 1 . LdM $end
 $var reg 1 - LdQ $end
 $var reg 1 , addsub $end
 $var reg 1 + clrA $end
-$var reg 1 ) clrQ $end
-$var reg 1 * clrff $end
+$var reg 1 * clrQ $end
+$var reg 1 ) clrff $end
 $var reg 1 ( decr $end
 $var reg 1 ' done $end
 $var reg 1 % ldcnt $end
-$var reg 1 # sftA $end
-$var reg 1 " sftQ $end
-$var reg 3 G state [2:0] $end
+$var reg 1 " sftA $end
+$var reg 1 ! sftQ $end
+$var reg 3 E state [2:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-bx G
-bx F
-xE
+b0 E
 bx D
 xC
-bx B
-bx A
+b0 B
+xA
 bx @
-bx ?
+b0 ?
 bx >
 bx =
 bx <
 bx ;
-x:
-bx 9
-bx 8
+bx :
+x9
+b0 8
 bx 7
 bx 6
 bx 5
 bx 4
-z3
-x2
-bx 1
+b0 3
+02
+b0 1
 00
-x/
-x.
-x-
-x,
-x+
-x*
-x)
-x(
-x'
-x&
-x%
-x$
-x#
-x"
-z!
-$end
-#5
-0'
+0/
 0.
-0"
+0-
+0,
+0+
 0*
 0)
-0-
-0#
-0+
-0/
-b0 G
-10
-#7
-12
-#10
-00
-b11 1
-b11 4
-b11 A
-b11 D
-#15
-1-
-1%
-1*
-1+
-b1 G
-10
-#20
-00
-#25
-0E
-0:
-1C
-b0 9
-b0 <
-b0 =
-b11 7
-b11 F
-0&
-b1111 5
-b1111 @
-10
-#26
-0$
-#27
-0-
-1.
+0(
+0'
+1&
 0%
-0*
-0+
-b10 G
-#30
+x$
+x#
+0"
+0!
+$end
+#5000
+10
+#10000
 00
 b111 1
-b111 4
-b111 A
-b111 D
-#35
-b111 6
-b111 ;
+b111 3
 b111 ?
-1(
-1"
-1#
-b111 8
-b111 >
 b111 B
-b101 G
+#15000
 10
-#36
-1$
-#40
+#20000
 00
-#45
-b1 7
-b1 F
-b1110 5
-b1110 @
+12
+#25000
+1.
+1-
+1%
+1)
+1*
+1+
+b1 E
 10
-#50
+#30000
 00
-#55
-0C
-b1101 5
-b1101 @
-b0 7
-b0 F
-10
-#56
+02
+#35000
+0%
+0)
+0*
+0+
+0.
+0-
+0A
 0$
-#60
-00
-#65
-b1100 5
-b1100 @
-10
-#70
-00
-#75
-b1011 5
-b1011 @
-10
-#80
-00
-#85
-b1010 5
-b1010 @
-10
-#90
-00
-#95
-b1001 5
-b1001 @
-10
-#100
-00
-#105
-b1000 5
-b1000 @
-10
-#110
-00
-#115
-b111 5
-b111 @
-10
-#120
-00
-#125
-b110 5
-b110 @
-10
-#130
-00
-#135
-b101 5
-b101 @
-10
-#140
-00
-#145
-b100 5
-b100 @
-10
-#150
-00
-#155
-b11 5
-b11 @
-10
-#160
-00
-#165
-b10 5
-b10 @
-10
-#170
-00
-#175
-b1 5
-b1 @
-10
-#180
-00
-#185
-1&
-b0 5
+b0 4
+b0 :
+b0 >
+0C
+09
+b10 E
+0&
+b10000 8
+0#
+b0 6
+b0 =
 b0 @
+b0 5
+b0 D
+b0 7
+b0 ;
+b0 <
 10
-#187
+#40000
+00
+#45000
+1(
+1!
+1"
+b101 E
+10
+#50000
+00
+#55000
+0(
+0!
+0"
+b10 E
+b1111 8
+10
+#60000
+00
+#65000
+1(
+1!
+1"
+b101 E
+10
+#70000
+00
+#75000
+0(
+0!
+0"
+b10 E
+b1110 8
+10
+#80000
+00
+#85000
+1(
+1!
+1"
+b101 E
+10
+#90000
+00
+#95000
+0(
+0!
+0"
+b10 E
+b1101 8
+10
+#100000
+00
+#105000
+1(
+1!
+1"
+b101 E
+10
+#110000
+00
+#115000
+0(
+0!
+0"
+b10 E
+b1100 8
+10
+#120000
+00
+#125000
+1(
+1!
+1"
+b101 E
+10
+#130000
+00
+#135000
+0(
+0!
+0"
+b10 E
+b1011 8
+10
+#140000
+00
+#145000
+1(
+1!
+1"
+b101 E
+10
+#150000
+00
+#155000
+0(
+0!
+0"
+b10 E
+b1010 8
+10
+#160000
+00
+#165000
+1(
+1!
+1"
+b101 E
+10
+#170000
+00
+#175000
+0(
+0!
+0"
+b10 E
+b1001 8
+10
+#180000
+00
+#185000
+1(
+1!
+1"
+b101 E
+10
+#190000
+00
+#195000
+0(
+0!
+0"
+b10 E
+b1000 8
+10
+#200000
+00
+#205000
+1(
+1!
+1"
+b101 E
+10
+#210000
+00
+#215000
+0(
+0!
+0"
+b10 E
+b111 8
+10
+#220000
+00
+#225000
+1(
+1!
+1"
+b101 E
+10
+#230000
+00
+#235000
+0(
+0!
+0"
+b10 E
+b110 8
+10
+#240000
+00
+#245000
+1(
+1!
+1"
+b101 E
+10
+#250000
+00
+#255000
+0(
+0!
+0"
+b10 E
+b101 8
+10
+#260000
+00
+#265000
+1(
+1!
+1"
+b101 E
+10
+#270000
+00
+#275000
+0(
+0!
+0"
+b10 E
+b100 8
+10
+#280000
+00
+#285000
+1(
+1!
+1"
+b101 E
+10
+#290000
+00
+#295000
+0(
+0!
+0"
+b10 E
+b11 8
+10
+#300000
+00
+#305000
+1(
+1!
+1"
+b101 E
+10
+#310000
+00
+#315000
+0(
+0!
+0"
+b10 E
+b10 8
+10
+#320000
+00
+#325000
+1(
+1!
+1"
+b101 E
+10
+#330000
+00
+#335000
+0(
+0!
+0"
+b10 E
+b1 8
+10
+#340000
+00
+#345000
+1(
+1!
+1"
+b101 E
+10
+#350000
+00
+#355000
+0(
+0!
+0"
+b10 E
+1&
+b0 8
+10
+#360000
+00
+#365000
+1(
+1!
+1"
+b101 E
+10
+#370000
+00
+#375000
 1'
-b110 G
-#188
+0(
+0!
+0"
+b110 E
+0&
+b11111 8
+10
+#380000
+00
+#385000
+10
+#390000
+00
+#395000
+10
+#400000
+00
+#405000
+10
+#410000
+00
+#415000
+10
+#420000
+00
+#425000
+10
+#430000
+00
+#435000
+10
+#440000
+00
+#445000
+10
+#450000
+00
+#455000
+10
+#460000
+00
+#465000
+10
+#470000
+00
+#475000
+10
+#480000
+00
+#485000
+10
+#490000
+00
+#495000
+10
+#500000
+00
+#505000
+10
+#510000
+00
+#515000
+10
+#520000
+00
+#525000
+10
+#530000
+00

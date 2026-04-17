@@ -36,7 +36,6 @@ def exact_q1a():
     return 0.5 * (x * math.sqrt(1 + x**2) + math.log(x + math.sqrt(1 + x**2)))
 
 def exact_q1b():
-    # Integral of 1/(1+x) from 0 to 6 = ln(7)
     return math.log(7)
 
 def print_results(title, exact, trap, simp13, simp38):
